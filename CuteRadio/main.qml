@@ -1,5 +1,6 @@
 import QtQuick 2.10
 import QtQuick.Controls 2.3
+import QtMultimedia 5.8
 import QtQuick.Window 2.10
 
 Window {
@@ -68,7 +69,13 @@ Window {
                 width: 0.125 * mainWindow.width
                 checkable: true
                 text: checked ? qsTr("Stop") : qsTr("Play")
+                onToggled: checked ? player.play() : player.stop()
             }
         }
+    }
+
+    MediaPlayer {
+        id: player
+        source: "http://mp3channels.webradio.antenne.de/antenne"
     }
 }
