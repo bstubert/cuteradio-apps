@@ -1,4 +1,5 @@
 import QtQuick 2.10
+import QtQuick.Controls 2.3
 import QtQuick.Window 2.10
 
 Window {
@@ -58,6 +59,16 @@ Window {
             anchors.bottom: parent.bottom
             height: parent._rowHeight
             color: "#BAAB68" // dark khaki
+
+            Button {
+                id: playButton
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                width: 0.125 * mainWindow.width
+                checkable: true
+                text: checked ? qsTr("Stop") : qsTr("Play")
+            }
         }
     }
 }
