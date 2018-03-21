@@ -70,6 +70,7 @@ Window {
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
                 value: 0.5
+                onMoved: player.volume = volumeSlider.value
             }
 
             Button {
@@ -90,6 +91,5 @@ Window {
         id: player
         autoPlay: true
         source: "http://mp3channels.webradio.antenne.de/antenne"
-        volume: volumeSlider.value
     }
 }
