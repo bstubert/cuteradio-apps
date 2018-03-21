@@ -29,7 +29,7 @@ Window {
             id: menu
             anchors.left: parent.left
             anchors.top: statusBar.bottom
-            anchors.bottom: toolBar.top
+            anchors.bottom: bottomBar.top
             width: parent._menuWidth
             color: "#E3C16F" // straw
         }
@@ -39,7 +39,7 @@ Window {
             anchors.left: menu.right
             anchors.right: favorites.left
             anchors.top: statusBar.bottom
-            anchors.bottom: toolBar.top
+            anchors.bottom: bottomBar.top
             color: "#6D213C" // wine
         }
 
@@ -48,13 +48,13 @@ Window {
             id: favorites
             anchors.right: parent.right
             anchors.top: statusBar.bottom
-            anchors.bottom: toolBar.top
+            anchors.bottom: bottomBar.top
             width: parent._menuWidth
             color: "#FAFF70" // unmellow yellow
         }
 
         Rectangle {
-            id: toolBar
+            id: bottomBar
             anchors.left: parent.left
             anchors.leftMargin: menu.width
             anchors.right: parent.right
