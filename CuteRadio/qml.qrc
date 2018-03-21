@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>Images/icPlay.png</file>
         <file>Images/icPause.png</file>
+        <file>BottomBar.qml</file>
     </qresource>
 </RCC>
