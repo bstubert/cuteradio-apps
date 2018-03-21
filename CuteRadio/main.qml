@@ -79,6 +79,7 @@ Window {
                 anchors.bottom: parent.bottom
                 width: 0.125 * mainWindow.width
                 checkable: true
+                checked: true
                 icon.source: checked ? "/Images/icPause.png" : "/Images/icPlay.png"
                 onToggled: checked ? player.play() : player.pause()
             }
@@ -87,6 +88,7 @@ Window {
 
     MediaPlayer {
         id: player
+        autoPlay: true
         source: "http://mp3channels.webradio.antenne.de/antenne"
         volume: volumeSlider.value
     }
