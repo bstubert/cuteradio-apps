@@ -2,9 +2,9 @@ import QtQuick 2.10
 import QtQuick.Controls 2.3
 import QtMultimedia 5.8
 
-Rectangle {
+Pane
+{
     id: bottomBar
-    color: "#BAAB68" // dark khaki
 
     Slider {
         id: volumeSlider
