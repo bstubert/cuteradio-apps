@@ -6,6 +6,8 @@ Pane
 {
     id: bottomBar
 
+    property MediaPlayer player
+
     Slider {
         id: volumeSlider
         anchors.left: parent.left

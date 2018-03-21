@@ -61,11 +61,12 @@ Window {
             anchors.rightMargin: favorites.width
             anchors.bottom: parent.bottom
             height: parent._rowHeight
+            player: g_player
         }
     }
 
     MediaPlayer {
-        id: player
+        id: g_player
         autoPlay: true
         source: "http://mp3channels.webradio.antenne.de/antenne"
     }
