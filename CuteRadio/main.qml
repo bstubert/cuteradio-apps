@@ -68,8 +68,8 @@ Window {
                 anchors.bottom: parent.bottom
                 width: 0.125 * mainWindow.width
                 checkable: true
-                text: checked ? qsTr("Stop") : qsTr("Play")
-                onToggled: checked ? player.play() : player.stop()
+                icon.source: checked ? "/Images/icPause.png" : "/Images/icPlay.png"
+                onToggled: checked ? player.play() : player.pause()
             }
         }
     }
