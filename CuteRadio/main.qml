@@ -63,6 +63,15 @@ Window {
             height: parent._rowHeight
             color: "#BAAB68" // dark khaki
 
+            Slider {
+                id: volumeSlider
+                anchors.left: parent.left
+                anchors.right: playButton.left
+                anchors.top: parent.top
+                anchors.bottom: parent.bottom
+                value: 0.5
+            }
+
             Button {
                 id: playButton
                 anchors.right: parent.right
@@ -79,5 +88,6 @@ Window {
     MediaPlayer {
         id: player
         source: "http://mp3channels.webradio.antenne.de/antenne"
+        volume: volumeSlider.value
     }
 }
