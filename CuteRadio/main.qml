@@ -79,7 +79,7 @@ Window {
                 anchors.bottom: parent.bottom
                 width: 0.125 * mainWindow.width
                 checkable: true
-                checked: true
+                checked: player.autoPlay
                 icon.source: checked ? "/Images/icPause.png" : "/Images/icPlay.png"
                 onToggled: checked ? player.play() : player.pause()
             }
