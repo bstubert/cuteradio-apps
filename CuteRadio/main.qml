@@ -56,14 +56,16 @@ Window {
         Rectangle {
             id: toolBar
             anchors.left: parent.left
+            anchors.leftMargin: menu.width
             anchors.right: parent.right
+            anchors.rightMargin: favorites.width
             anchors.bottom: parent.bottom
             height: parent._rowHeight
             color: "#BAAB68" // dark khaki
 
             Button {
                 id: playButton
-                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.right: parent.right
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
                 width: 0.125 * mainWindow.width
