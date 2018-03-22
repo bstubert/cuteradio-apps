@@ -40,7 +40,13 @@ Window {
             anchors.right: favorites.left
             anchors.top: statusBar.bottom
             anchors.bottom: bottomBar.top
-            color: "#6D213C" // wine
+            color: "#FAFF70" // unmellow yellow
+
+            Label {
+                anchors.centerIn: parent
+                text: "Antenne Bayern"
+                font.pixelSize: 36
+            }
         }
 
 
@@ -50,7 +56,7 @@ Window {
             anchors.top: statusBar.bottom
             anchors.bottom: bottomBar.top
             width: parent._menuWidth
-            color: "#FAFF70" // unmellow yellow
+            color: "#6D213C" // wine
         }
 
         BottomBar {
