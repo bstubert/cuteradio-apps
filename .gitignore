@@ -1,5 +1,6 @@
 # Qt builds
 build-*
+CMakeLists.txt.user
 
 # Prerequisites
 *.d
