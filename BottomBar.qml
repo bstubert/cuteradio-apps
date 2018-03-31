@@ -26,7 +26,13 @@ Pane
         width: 0.125 * mainWindow.width
         checkable: true
         checked: player.autoPlay
-        icon.source: checked ? "/Images/icPause.png" : "/Images/icPlay.png"
         onToggled: checked ? player.play() : player.pause()
+
+        Image {
+            anchors.centerIn: parent
+            height: 0.8 * playButton.height
+            width: height
+            source: playButton.checked ? "/Images/icPause.png" : "/Images/icPlay.png"
+        }
     }
 }
