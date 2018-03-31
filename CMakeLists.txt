@@ -23,3 +23,10 @@ find_package(Qt5Multimedia)
 target_link_libraries(${PROJECT_NAME}
     Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick Qt5::Multimedia
 )
+
+install(
+  TARGETS ${PROJECT_NAME}
+  RUNTIME
+    DESTINATION bin
+    COMPONENT release
+)
