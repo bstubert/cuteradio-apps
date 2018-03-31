@@ -28,5 +28,5 @@ install(
   TARGETS ${PROJECT_NAME}
   RUNTIME
     DESTINATION local/bin
-    COMPONENT release
+    COMPONENT runtime
 )
