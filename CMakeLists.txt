@@ -27,6 +27,6 @@ target_link_libraries(${PROJECT_NAME}
 install(
   TARGETS ${PROJECT_NAME}
   RUNTIME
-    DESTINATION bin
+    DESTINATION local/bin
     COMPONENT release
 )
