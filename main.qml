@@ -6,68 +6,75 @@ import QtQuick.Window 2.2
 Window {
     id: mainWindow
     visible: true
-    width: 800
-    height: 480
-    title: qsTr("Hello World")
+    title: qsTr("CuteRadio")
+
+    Component.onCompleted: mainWindow.showFullScreen()
 
     Rectangle {
-        anchors.fill: parent
-        color: "blue"
-
-        property real _menuWidth: 0.25 * mainWindow.width
-        property real _rowHeight: 0.125 * mainWindow.height
+        anchors.fill:  parent
+        color: "magenta"
 
         Rectangle {
-            id: statusBar
-            anchors.left: parent.left
-            anchors.right: parent.right
-            height: parent._rowHeight
-            color: "#946846" // raw umber
-        }
+            anchors.centerIn: parent
+            width: 800
+            height: 480
+            color: "blue"
 
-        Rectangle {
-            id: menu
-            anchors.left: parent.left
-            anchors.top: statusBar.bottom
-            anchors.bottom: bottomBar.top
-            width: parent._menuWidth
-            color: "#E3C16F" // straw
-        }
+            property real _menuWidth: 0.25 * width
+            property real _rowHeight: 0.125 * height
 
-        Rectangle {
-            id: stationInfo
-            anchors.left: menu.right
-            anchors.right: favorites.left
-            anchors.top: statusBar.bottom
-            anchors.bottom: bottomBar.top
-            color: "#FAFF70" // unmellow yellow
-
-            Label {
-                anchors.centerIn: parent
-                text: "Antenne Bayern"
-                font.pixelSize: 36
+            Rectangle {
+                id: statusBar
+                anchors.left: parent.left
+                anchors.right: parent.right
+                height: parent._rowHeight
+                color: "#946846" // raw umber
             }
-        }
+
+            Rectangle {
+                id: menu
+                anchors.left: parent.left
+                anchors.top: statusBar.bottom
+                anchors.bottom: bottomBar.top
+                width: parent._menuWidth
+                color: "#E3C16F" // straw
+            }
+
+            Rectangle {
+                id: stationInfo
+                anchors.left: menu.right
+                anchors.right: favorites.left
+                anchors.top: statusBar.bottom
+                anchors.bottom: bottomBar.top
+                color: "#FAFF70" // unmellow yellow
+
+                Label {
+                    anchors.centerIn: parent
+                    text: "Antenne Bayern"
+                    font.pixelSize: 36
+                }
+            }
 
 
-        Rectangle {
-            id: favorites
-            anchors.right: parent.right
-            anchors.top: statusBar.bottom
-            anchors.bottom: bottomBar.top
-            width: parent._menuWidth
-            color: "#6D213C" // wine
-        }
+            Rectangle {
+                id: favorites
+                anchors.right: parent.right
+                anchors.top: statusBar.bottom
+                anchors.bottom: bottomBar.top
+                width: parent._menuWidth
+                color: "#6D213C" // wine
+            }
 
-        BottomBar {
-            id: bottomBar
-            anchors.left: parent.left
-            anchors.leftMargin: menu.width
-            anchors.right: parent.right
-            anchors.rightMargin: favorites.width
-            anchors.bottom: parent.bottom
-            height: parent._rowHeight
-            player: g_player
+            BottomBar {
+                id: bottomBar
+                anchors.left: parent.left
+                anchors.leftMargin: menu.width
+                anchors.right: parent.right
+                anchors.rightMargin: favorites.width
+                anchors.bottom: parent.bottom
+                height: parent._rowHeight
+                player: g_player
+            }
         }
     }
 

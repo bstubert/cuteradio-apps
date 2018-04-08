@@ -23,7 +23,7 @@ Pane
         anchors.right: parent.right
         anchors.top: parent.top
         anchors.bottom: parent.bottom
-        width: 0.125 * mainWindow.width
+        width: 0.25 * parent.width
         checkable: true
         checked: player.autoPlay
         onToggled: checked ? player.play() : player.pause()
