@@ -1,4 +1,4 @@
-#include <QAudioDeviceInfo>
+//#include <QAudioDeviceInfo>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QtDebug>
@@ -11,10 +11,10 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    for (auto dev : QAudioDeviceInfo::availableDevices(QAudio::AudioOutput)) {
-        qDebug() << "@ Audio device = " << dev.deviceName();
-    }
-    qDebug() << "@ Default audio device = " << QAudioDeviceInfo::defaultOutputDevice().deviceName();
+//    for (auto dev : QAudioDeviceInfo::availableDevices(QAudio::AudioOutput)) {
+//        qDebug() << "@ Audio device = " << dev.deviceName();
+//    }
+//    qDebug() << "@ Default audio device = " << QAudioDeviceInfo::defaultOutputDevice().deviceName();
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
