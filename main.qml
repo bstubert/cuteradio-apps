@@ -1,6 +1,6 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-//import QtMultimedia 5.8
+import QtMultimedia 5.8
 import QtQuick.Window 2.2
 
 Window {
@@ -73,14 +73,14 @@ Window {
                 anchors.rightMargin: favorites.width
                 anchors.bottom: parent.bottom
                 height: parent._rowHeight
-//                player: g_player
+                player: g_player
             }
         }
     }
 
-//    MediaPlayer {
-//        id: g_player
-//        autoPlay: true
-//        source: "http://mp3channels.webradio.antenne.de/antenne"
-//    }
+    MediaPlayer {
+        id: g_player
+        autoPlay: true
+        source: "http://mp3channels.webradio.antenne.de/antenne"
+    }
 }

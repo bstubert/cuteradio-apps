@@ -18,12 +18,11 @@ find_package(Qt5Core)
 find_package(Qt5Gui)
 find_package(Qt5Qml)
 find_package(Qt5Quick)
-#find_package(Qt5Multimedia)
+find_package(Qt5Multimedia)
 
 target_link_libraries(${PROJECT_NAME}
-    Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick
+    Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick Qt5::Multimedia
 )
-# Qt5::Multimedia
 
 install(
   TARGETS ${PROJECT_NAME}
