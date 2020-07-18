@@ -6,6 +6,8 @@ project(cuteradio)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+#set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/staging)
+#set(CMAKE_VERBOSE_MAKEFILE false)
 
 add_executable(${PROJECT_NAME}
     main.cpp
