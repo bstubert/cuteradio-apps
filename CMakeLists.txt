@@ -9,6 +9,11 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 #set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/staging)
 #set(CMAKE_VERBOSE_MAKEFILE false)
 
+find_package(Qt5Core)
+find_package(Qt5Gui)
+find_package(Qt5Qml)
+find_package(Qt5Quick)
+
 add_executable(${PROJECT_NAME}
     main.cpp
     qml.qrc
@@ -16,14 +21,8 @@ add_executable(${PROJECT_NAME}
     BottomBar.qml
 )
 
-find_package(Qt5Core)
-find_package(Qt5Gui)
-find_package(Qt5Qml)
-find_package(Qt5Quick)
-find_package(Qt5Multimedia)
-
 target_link_libraries(${PROJECT_NAME}
-    Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick Qt5::Multimedia
+    Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick
 )
 
 install(

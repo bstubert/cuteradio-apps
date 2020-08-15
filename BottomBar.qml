@@ -1,12 +1,11 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
-import QtMultimedia 5.8
 
 Pane
 {
     id: bottomBar
 
-    property MediaPlayer player
+//    property MediaPlayer player
 
     Slider {
         id: volumeSlider
@@ -15,7 +14,7 @@ Pane
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         value: 0.5
-        onMoved: player.volume = volumeSlider.value
+//        onMoved: player.volume = volumeSlider.value
     }
 
     Button {
@@ -25,8 +24,8 @@ Pane
         anchors.bottom: parent.bottom
         width: 0.25 * parent.width
         checkable: true
-        checked: player.autoPlay
-        onToggled: checked ? player.play() : player.pause()
+//        checked: player.autoPlay
+//        onToggled: checked ? player.play() : player.pause()
 
         Image {
             anchors.centerIn: parent
