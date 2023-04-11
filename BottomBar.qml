@@ -1,6 +1,6 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import QtMultimedia 5.8
+import QtQuick
+import QtQuick.Controls
+import QtMultimedia
 
 Pane
 {
@@ -15,7 +15,7 @@ Pane
         anchors.top: parent.top
         anchors.bottom: parent.bottom
         value: 0.5
-        onMoved: player.volume = volumeSlider.value
+        onMoved: player.audioOutput.volume = volumeSlider.value
     }
 
     Button {
@@ -25,8 +25,19 @@ Pane
         anchors.bottom: parent.bottom
         width: 0.25 * parent.width
         checkable: true
-        checked: player.autoPlay
-        onToggled: checked ? player.play() : player.pause()
+        checked: false
+        onToggled: {
+            if (checked)
+            {
+                console.log("Playing...")
+                player.play()
+            }
+            else
+            {
+                console.log("Pausing...")
+                player.pause()
+            }
+        }
 
         Image {
             anchors.centerIn: parent
