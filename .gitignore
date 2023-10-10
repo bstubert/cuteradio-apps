@@ -1,4 +1,6 @@
 # Qt builds
+.idea/
+cmake-build-*
 build-*
 CMakeLists.txt.user
 
