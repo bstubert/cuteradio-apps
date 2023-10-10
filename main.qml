@@ -7,74 +7,67 @@ Window {
     id: mainWindow
     visible: true
     title: qsTr("CuteRadio")
-
-    Component.onCompleted: mainWindow.showFullScreen()
+    width: 800
+    height: 480
 
     Rectangle {
-        anchors.fill:  parent
-        color: "magenta"
+        anchors.fill: parent
+        color: "blue"
+
+        property real _menuWidth: 0.25 * width
+        property real _rowHeight: 0.125 * height
 
         Rectangle {
-            anchors.centerIn: parent
-            width: 800
-            height: 480
-            color: "blue"
+            id: statusBar
+            anchors.left: parent.left
+            anchors.right: parent.right
+            height: parent._rowHeight
+            color: "#946846" // raw umber
+        }
 
-            property real _menuWidth: 0.25 * width
-            property real _rowHeight: 0.125 * height
+        Rectangle {
+            id: menu
+            anchors.left: parent.left
+            anchors.top: statusBar.bottom
+            anchors.bottom: bottomBar.top
+            width: parent._menuWidth
+            color: "#E3C16F" // straw
+        }
 
-            Rectangle {
-                id: statusBar
-                anchors.left: parent.left
-                anchors.right: parent.right
-                height: parent._rowHeight
-                color: "#946846" // raw umber
+        Rectangle {
+            id: stationInfo
+            anchors.left: menu.right
+            anchors.right: favorites.left
+            anchors.top: statusBar.bottom
+            anchors.bottom: bottomBar.top
+            color: "#FAFF70" // unmellow yellow
+
+            Label {
+                anchors.centerIn: parent
+                text: "Antenne Bayern"
+                font.pixelSize: 36
             }
-
-            Rectangle {
-                id: menu
-                anchors.left: parent.left
-                anchors.top: statusBar.bottom
-                anchors.bottom: bottomBar.top
-                width: parent._menuWidth
-                color: "#E3C16F" // straw
-            }
-
-            Rectangle {
-                id: stationInfo
-                anchors.left: menu.right
-                anchors.right: favorites.left
-                anchors.top: statusBar.bottom
-                anchors.bottom: bottomBar.top
-                color: "#FAFF70" // unmellow yellow
-
-                Label {
-                    anchors.centerIn: parent
-                    text: "Antenne Bayern"
-                    font.pixelSize: 36
-                }
-            }
+        }
 
 
-            Rectangle {
-                id: favorites
-                anchors.right: parent.right
-                anchors.top: statusBar.bottom
-                anchors.bottom: bottomBar.top
-                width: parent._menuWidth
-                color: "#6D213C" // wine
-            }
+        Rectangle {
+            id: favorites
+            anchors.right: parent.right
+            anchors.top: statusBar.bottom
+            anchors.bottom: bottomBar.top
+            width: parent._menuWidth
+            color: "#6D213C" // wine
+        }
 
-            BottomBar {
-                id: bottomBar
-                anchors.left: parent.left
-                anchors.leftMargin: menu.width
-                anchors.right: parent.right
-                anchors.rightMargin: favorites.width
-                anchors.bottom: parent.bottom
-                height: parent._rowHeight
-                player: g_player
-            }
+        BottomBar {
+            id: bottomBar
+            anchors.left: parent.left
+            anchors.leftMargin: menu.width
+            anchors.right: parent.right
+            anchors.rightMargin: favorites.width
+            anchors.bottom: parent.bottom
+            height: parent._rowHeight
+            player: g_player
         }
     }
 
