@@ -6,7 +6,6 @@ project(cuteradio)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
-#set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/staging)
 #set(CMAKE_VERBOSE_MAKEFILE false)
 
 add_executable(${PROJECT_NAME}
@@ -25,6 +24,15 @@ find_package(Qt5Multimedia)
 target_link_libraries(${PROJECT_NAME}
     Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick Qt5::Multimedia
 )
+
+include(GNUInstallDirs)
+set(EMUSE_INSTALL_SUFFIX embeddeduse/${PROJECT_NAME})
+if(CMAKE_CROSSCOMPILING)
+    set(CMAKE_STAGING_PREFIX ${CMAKE_BINARY_DIR}/opt/${EMUSE_INSTALL_SUFFIX})
+    set(CMAKE_INSTALL_PREFIX /opt/${EMUSE_INSTALL_SUFFIX})
+else()
+    set(CMAKE_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/opt/${EMUSE_INSTALL_SUFFIX})
+endif()
 
 install(
   TARGETS ${PROJECT_NAME}
