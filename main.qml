@@ -23,6 +23,13 @@ Window {
             anchors.right: parent.right
             height: parent._rowHeight
             color: "#946846" // raw umber
+
+            Text {
+                anchors.centerIn: parent
+                text: "1.0.0"
+                font.pixelSize: 36
+                color: "white"
+            }
         }
 
         Rectangle {
