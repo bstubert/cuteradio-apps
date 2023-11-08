@@ -26,7 +26,7 @@ Window {
 
             Text {
                 anchors.centerIn: parent
-                text: "1.1.1"
+                text: "1.0.3"
                 font.pixelSize: 36
                 color: "white"
             }
